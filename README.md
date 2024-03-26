@@ -16,5 +16,5 @@ To run this application locally, you need the following:
 - npm 
 - TypeScript 
 
-# Here is my npx command:
+## Here is my npx command:
 npx hraza09-cli-atm
