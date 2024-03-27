@@ -7,6 +7,7 @@ This is a command-line interface (CLI) ATM application built using Inquirer.js, 
 - Account Balance Inquiry
 - Withdrawal
 - PIN Verification
+- FastCash feature
 
 ## Requirements
 
