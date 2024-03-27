@@ -16,7 +16,7 @@ if (pinAnswer.pin === myPinCode) {
             name: "operation",
             message: "Please Select one option:",
             type: "list",
-            choices: ["withdraw", "check balance"],
+            choices: ["withdraw", "check balance", "fastCash"],
         },
     ]);
     if (operationAns.operation === "withdraw") {
@@ -24,8 +24,7 @@ if (pinAnswer.pin === myPinCode) {
             {
                 name: "amount",
                 message: "enter your amount",
-                type: "list",
-                choices: [1000, 2000, 5000, 10000, 20000],
+                type: "number",
             },
         ]);
         if (amountAns.amount <= myBalance) {
@@ -38,6 +37,18 @@ if (pinAnswer.pin === myPinCode) {
     }
     else if (operationAns.operation === "check balance") {
         console.log(`Your Balance is: ${myBalance}`);
+    }
+    else if (operationAns.operation === "fastCash") {
+        let amountAns = await inquirer.prompt([
+            {
+                name: "amount",
+                message: "enter your amount",
+                type: "list",
+                choices: [1000, 2000, 5000, 10000, 20000],
+            },
+        ]);
+        myBalance -= amountAns.amount;
+        console.log(`Your remaining balance is: ${myBalance}`);
     }
 }
 else {
